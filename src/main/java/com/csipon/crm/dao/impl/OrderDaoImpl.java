@@ -4,7 +4,6 @@ import com.csipon.crm.dao.OrderDao;
 import com.csipon.crm.dao.ProductDao;
 import com.csipon.crm.dao.UserDao;
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.model.state.order.OrderState;
 import com.csipon.crm.domain.proxy.ProductProxy;
 import com.csipon.crm.domain.proxy.UserProxy;

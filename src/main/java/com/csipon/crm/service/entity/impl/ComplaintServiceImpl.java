@@ -3,7 +3,6 @@ package com.csipon.crm.service.entity.impl;
 import com.csipon.crm.dao.ComplaintDao;
 import com.csipon.crm.dao.HistoryDao;
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealComplaint;
 import com.csipon.crm.domain.request.ComplaintRowRequest;
 import com.csipon.crm.dto.AutocompleteDto;
@@ -86,25 +85,25 @@ public class ComplaintServiceImpl implements ComplaintService {
     }
 
     @Transactional(readOnly = true)
-    private List<AutocompleteDto> getTitlesByPmg(String likeTitle, User pmg) {
+    List<AutocompleteDto> getTitlesByPmg(String likeTitle, User pmg) {
         List<String> titles = complaintDao.findComplaintsTitleByPmgId(likeTitle, pmg.getId());
         return ModelMapper.mapList(complaintMapper.modelToAutocomplete(), titles, AutocompleteDto.class);
     }
 
     @Transactional(readOnly = true)
-    private List<AutocompleteDto> getAllTitles(String likeTitle) {
+    List<AutocompleteDto> getAllTitles(String likeTitle) {
         List<String> titles = complaintDao.findComplaintsTitleLikeTitle(likeTitle);
         return ModelMapper.mapList(complaintMapper.modelToAutocomplete(), titles, AutocompleteDto.class);
     }
 
     @Transactional(readOnly = true)
-    private List<AutocompleteDto> getTitlesForContactPerson(String likeTitle, Long custId) {
+    List<AutocompleteDto> getTitlesForContactPerson(String likeTitle, Long custId) {
         List<String> titles = complaintDao.findComplaintsTitleForContactPerson(likeTitle, custId);
         return ModelMapper.mapList(complaintMapper.modelToAutocomplete(), titles, AutocompleteDto.class);
     }
 
     @Transactional(readOnly = true)
-    private List<AutocompleteDto> getTitlesForNotContactPerson(String likeTitle, Long custId) {
+    List<AutocompleteDto> getTitlesForNotContactPerson(String likeTitle, Long custId) {
         List<String> titles = complaintDao.findComplaintsTitleByCustId(likeTitle, custId);
         return ModelMapper.mapList(complaintMapper.modelToAutocomplete(), titles, AutocompleteDto.class);
     }
@@ -172,7 +171,7 @@ public class ComplaintServiceImpl implements ComplaintService {
     }
 
     @Transactional
-    private boolean acceptComplaint(Long complaintId, User user) {
+    boolean acceptComplaint(Long complaintId, User user) {
         Complaint complaint = complaintDao.findById(complaintId);
 
         if (complaint.getPmg() != null) {
@@ -191,7 +190,7 @@ public class ComplaintServiceImpl implements ComplaintService {
     }
 
     @Transactional
-    private boolean closeComplaint(Long complaintId, User user) {
+    boolean closeComplaint(Long complaintId, User user) {
         Boolean isRoleAdmin = user.getUserRole().equals(UserRole.ROLE_ADMIN);
         Complaint complaint = complaintDao.findById(complaintId);
         if (complaint.getPmg() == null || (!complaint.getPmg().getId().equals(user.getId())) && (!isRoleAdmin)) {

@@ -23,11 +23,10 @@
 package com.csipon.crm.domain.model.state.order;
 
 
-import com.csipon.crm.domain.model.state.order.states.*;
 import com.csipon.crm.domain.model.History;
 import com.csipon.crm.domain.model.Order;
 import com.csipon.crm.domain.model.OrderStatus;
-import com.netcracker.crm.domain.model.state.order.states.*;
+import com.csipon.crm.domain.model.state.order.states.*;
 import com.csipon.crm.domain.real.RealHistory;
 import com.csipon.crm.exception.lifecycle.order.UnsupportedTransitionException;
 

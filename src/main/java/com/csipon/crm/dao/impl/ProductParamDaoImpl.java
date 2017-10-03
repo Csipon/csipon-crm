@@ -26,9 +26,6 @@ import java.util.List;
 import static com.csipon.crm.dao.impl.sql.DiscountSqlQuery.PARAM_PATTERN;
 import static com.csipon.crm.dao.impl.sql.ProductParamSqlQuery.*;
 
-/**
- * @author YARUS
- */
 @Repository
 public class ProductParamDaoImpl implements ProductParamDao {
 

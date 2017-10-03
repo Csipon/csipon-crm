@@ -3,8 +3,8 @@ package com.csipon.crm.dao.impl;
 import com.csipon.crm.dao.DiscountDao;
 import com.csipon.crm.dao.GroupDao;
 import com.csipon.crm.dao.RegionDao;
-import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.dao.RegionGroupsDao;
+import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.domain.model.Region;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +20,6 @@ import java.util.List;
 
 import static com.csipon.crm.dao.impl.sql.RegionGroupsSqlQuery.*;
 
-/**
- * @author Melnyk_Dmytro
- * @version 1.0
- * @since 28.04.2017
- */
 
 @Repository
 public class RegionGroupsDaoImpl implements RegionGroupsDao {

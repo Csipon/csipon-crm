@@ -1,18 +1,17 @@
 package com.csipon.crm.dto.mapper.impl;
 
 import com.csipon.crm.dao.AddressDao;
+import com.csipon.crm.dao.OrganizationDao;
 import com.csipon.crm.dao.RegionDao;
 import com.csipon.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealAddress;
+import com.csipon.crm.domain.real.RealOrganization;
 import com.csipon.crm.domain.real.RealRegion;
 import com.csipon.crm.domain.real.RealUser;
 import com.csipon.crm.dto.AutocompleteDto;
+import com.csipon.crm.dto.UserDto;
 import com.csipon.crm.dto.mapper.Mapper;
 import com.csipon.crm.dto.row.UserRowDto;
-import com.csipon.crm.dao.OrganizationDao;
-import com.netcracker.crm.domain.model.*;
-import com.csipon.crm.domain.real.RealOrganization;
-import com.csipon.crm.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

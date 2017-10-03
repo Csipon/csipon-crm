@@ -1,9 +1,9 @@
 package com.csipon.crm.dao.impl;
 
-import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.dao.DiscountDao;
 import com.csipon.crm.dao.GroupDao;
 import com.csipon.crm.domain.model.Discount;
+import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.domain.proxy.DiscountProxy;
 import com.csipon.crm.domain.real.RealGroup;
 import com.csipon.crm.domain.request.GroupRowRequest;

@@ -1,15 +1,14 @@
 package com.csipon.crm.dto.mapper.impl;
 
-import com.csipon.crm.domain.model.*;
-import com.csipon.crm.dto.OrderHistoryDto;
-import com.csipon.crm.dto.OrderViewDto;
-import com.csipon.crm.dto.mapper.Mapper;
 import com.csipon.crm.dao.ProductDao;
 import com.csipon.crm.dao.UserDao;
-import com.netcracker.crm.domain.model.*;
+import com.csipon.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealOrder;
 import com.csipon.crm.dto.AutocompleteDto;
 import com.csipon.crm.dto.OrderDto;
+import com.csipon.crm.dto.OrderHistoryDto;
+import com.csipon.crm.dto.OrderViewDto;
+import com.csipon.crm.dto.mapper.Mapper;
 import com.csipon.crm.dto.row.OrderRowDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

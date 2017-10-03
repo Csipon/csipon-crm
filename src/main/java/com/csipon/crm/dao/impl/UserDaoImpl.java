@@ -1,15 +1,15 @@
 package com.csipon.crm.dao.impl;
 
 import com.csipon.crm.dao.AddressDao;
-import com.csipon.crm.dao.impl.sql.UserSqlQuery;
-import com.csipon.crm.domain.model.Address;
-import com.csipon.crm.domain.proxy.AddressProxy;
-import com.csipon.crm.domain.proxy.OrganizationProxy;
 import com.csipon.crm.dao.OrganizationDao;
 import com.csipon.crm.dao.UserDao;
+import com.csipon.crm.dao.impl.sql.UserSqlQuery;
+import com.csipon.crm.domain.model.Address;
 import com.csipon.crm.domain.model.Organization;
 import com.csipon.crm.domain.model.User;
 import com.csipon.crm.domain.model.UserRole;
+import com.csipon.crm.domain.proxy.AddressProxy;
+import com.csipon.crm.domain.proxy.OrganizationProxy;
 import com.csipon.crm.domain.real.RealUser;
 import com.csipon.crm.domain.request.RowRequest;
 import com.csipon.crm.domain.request.UserRowRequest;

@@ -1,11 +1,8 @@
 package com.csipon.crm.service.entity.impl;
 
+import com.csipon.crm.dao.ProductDao;
 import com.csipon.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealDiscount;
-import com.csipon.crm.listener.event.ChangeStatusProductEvent;
-import com.csipon.crm.listener.event.CreateProductEvent;
-import com.csipon.crm.dao.ProductDao;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealGroup;
 import com.csipon.crm.domain.real.RealProduct;
 import com.csipon.crm.domain.request.ProductRowRequest;
@@ -16,6 +13,8 @@ import com.csipon.crm.dto.mapper.ModelMapper;
 import com.csipon.crm.dto.mapper.impl.ProductMapper;
 import com.csipon.crm.dto.row.ProductRowDto;
 import com.csipon.crm.exception.UnsupportedChangingStatusException;
+import com.csipon.crm.listener.event.ChangeStatusProductEvent;
+import com.csipon.crm.listener.event.CreateProductEvent;
 import com.csipon.crm.service.entity.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -175,7 +174,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Transactional
-    private boolean changeStatusToOutdated(Long productId, User user) {
+    boolean changeStatusToOutdated(Long productId, User user) {
         Product product = productDao.findById(productId);
         ChangeStatusProductEvent event = new ChangeStatusProductEvent(this, product, user, ProductStatus.OUTDATED);
         publisher.publishEvent(event);
@@ -188,7 +187,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Transactional
-    private boolean changeStatusToActual(Long productId, User user) {
+    boolean changeStatusToActual(Long productId, User user) {
         Product product = productDao.findById(productId);
         ChangeStatusProductEvent event = new ChangeStatusProductEvent(this, product, user, ProductStatus.ACTUAL);
         publisher.publishEvent(event);

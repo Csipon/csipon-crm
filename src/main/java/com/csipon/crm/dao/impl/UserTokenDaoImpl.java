@@ -1,7 +1,7 @@
 package com.csipon.crm.dao.impl;
 
-import com.csipon.crm.dao.UserTokenDao;
 import com.csipon.crm.dao.UserDao;
+import com.csipon.crm.dao.UserTokenDao;
 import com.csipon.crm.domain.UserToken;
 import com.csipon.crm.domain.model.User;
 import com.csipon.crm.domain.proxy.UserProxy;

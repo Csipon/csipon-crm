@@ -1,9 +1,9 @@
 package com.csipon.crm.dao.impl;
 
-import com.csipon.crm.dao.impl.sql.UserAttemptSqlQuery;
-import com.csipon.crm.dao.impl.sql.UserSqlQuery;
 import com.csipon.crm.dao.UserAttemptsDao;
 import com.csipon.crm.dao.UserDao;
+import com.csipon.crm.dao.impl.sql.UserAttemptSqlQuery;
+import com.csipon.crm.dao.impl.sql.UserSqlQuery;
 import com.csipon.crm.domain.UserAttempts;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

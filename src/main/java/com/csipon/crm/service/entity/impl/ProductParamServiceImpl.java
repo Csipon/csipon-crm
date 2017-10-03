@@ -16,9 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author YARUS
- */
+
 @Service
 public class ProductParamServiceImpl implements ProductParamService {
 

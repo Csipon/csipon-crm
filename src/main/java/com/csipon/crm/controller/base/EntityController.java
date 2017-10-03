@@ -1,10 +1,8 @@
 package com.csipon.crm.controller.base;
 
 import com.csipon.crm.domain.model.*;
-import com.csipon.crm.service.entity.*;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.security.UserDetailsImpl;
-import com.netcracker.crm.service.entity.*;
+import com.csipon.crm.service.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;

@@ -1,9 +1,8 @@
 package com.csipon.crm.datagenerator.impl;
 
-import com.csipon.crm.datagenerator.AbstractSetter;
 import com.csipon.crm.dao.OrderDao;
+import com.csipon.crm.datagenerator.AbstractSetter;
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

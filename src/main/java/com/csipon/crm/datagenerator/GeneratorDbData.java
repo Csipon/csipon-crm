@@ -3,11 +3,9 @@ package com.csipon.crm.datagenerator;
 import com.csipon.crm.datagenerator.impl.*;
 import com.csipon.crm.datagenerator.impl.user.AdminSetter;
 import com.csipon.crm.datagenerator.impl.user.CsrSetter;
+import com.csipon.crm.datagenerator.impl.user.CustomerSetter;
 import com.csipon.crm.datagenerator.impl.user.PmgSetter;
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.datagenerator.impl.*;
-import com.csipon.crm.datagenerator.impl.user.CustomerSetter;
-import com.netcracker.crm.domain.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

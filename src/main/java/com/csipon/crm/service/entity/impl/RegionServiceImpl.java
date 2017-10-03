@@ -1,11 +1,11 @@
 package com.csipon.crm.service.entity.impl;
 
-import com.csipon.crm.dto.RegionDto;
 import com.csipon.crm.dao.RegionDao;
 import com.csipon.crm.dao.RegionGroupsDao;
 import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.domain.model.Region;
 import com.csipon.crm.dto.AutocompleteDto;
+import com.csipon.crm.dto.RegionDto;
 import com.csipon.crm.dto.mapper.ModelMapper;
 import com.csipon.crm.dto.mapper.impl.RegionMapper;
 import com.csipon.crm.service.entity.RegionService;

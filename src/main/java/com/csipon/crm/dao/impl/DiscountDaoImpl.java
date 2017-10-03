@@ -1,9 +1,9 @@
 package com.csipon.crm.dao.impl;
 
-import com.csipon.crm.domain.real.RealDiscount;
-import com.csipon.crm.domain.request.DiscountRowRequest;
 import com.csipon.crm.dao.DiscountDao;
 import com.csipon.crm.domain.model.Discount;
+import com.csipon.crm.domain.real.RealDiscount;
+import com.csipon.crm.domain.request.DiscountRowRequest;
 import com.csipon.crm.domain.request.RowRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

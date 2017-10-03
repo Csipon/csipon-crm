@@ -1,14 +1,13 @@
 package com.csipon.crm.dao.impl;
 
 import com.csipon.crm.dao.ComplaintDao;
+import com.csipon.crm.dao.OrderDao;
+import com.csipon.crm.dao.UserDao;
 import com.csipon.crm.dao.impl.sql.ComplaintSqlQuery;
 import com.csipon.crm.domain.model.*;
 import com.csipon.crm.domain.proxy.OrderProxy;
-import com.csipon.crm.domain.real.RealComplaint;
-import com.csipon.crm.dao.OrderDao;
-import com.csipon.crm.dao.UserDao;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.proxy.UserProxy;
+import com.csipon.crm.domain.real.RealComplaint;
 import com.csipon.crm.domain.request.ComplaintRowRequest;
 import com.csipon.crm.domain.request.RowRequest;
 import org.slf4j.Logger;

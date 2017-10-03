@@ -23,11 +23,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Melnyk_Dmytro
- * @version 1.0
- * @since 26.04.2017
- */
 @Repository
 public class RegionDaoImpl implements RegionDao {
     private static final Logger log = LoggerFactory.getLogger(RegionDaoImpl.class);

@@ -1,11 +1,11 @@
 package com.csipon.crm.service.impl;
 
-import com.csipon.crm.service.email.EmailType;
 import com.csipon.crm.dao.UserDao;
 import com.csipon.crm.domain.model.User;
 import com.csipon.crm.exception.NoSuchEmailException;
 import com.csipon.crm.service.email.EmailParam;
 import com.csipon.crm.service.email.EmailParamKeys;
+import com.csipon.crm.service.email.EmailType;
 import com.csipon.crm.service.email.senders.RecoveryPasswordSender;
 import com.csipon.crm.service.security.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,7 +4,6 @@ import com.csipon.crm.dao.DiscountDao;
 import com.csipon.crm.dao.GroupDao;
 import com.csipon.crm.dao.ProductDao;
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.domain.model.*;
 import com.csipon.crm.domain.proxy.DiscountProxy;
 import com.csipon.crm.domain.proxy.GroupProxy;
 import com.csipon.crm.domain.real.RealProduct;

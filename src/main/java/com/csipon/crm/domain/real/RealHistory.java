@@ -1,7 +1,6 @@
 package com.csipon.crm.domain.real;
 
 import com.csipon.crm.domain.model.*;
-import com.netcracker.crm.domain.model.*;
 
 import java.time.LocalDateTime;
 
