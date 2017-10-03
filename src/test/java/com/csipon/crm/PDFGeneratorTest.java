@@ -2,10 +2,9 @@ package com.csipon.crm;
 
 import com.csipon.crm.domain.model.*;
 import com.csipon.crm.domain.real.RealDiscount;
+import com.csipon.crm.domain.real.RealOrder;
 import com.csipon.crm.domain.real.RealProduct;
 import com.csipon.crm.domain.real.RealUser;
-import com.netcracker.crm.domain.model.*;
-import com.csipon.crm.domain.real.RealOrder;
 import com.csipon.crm.pdf.PDFGenerator;
 import org.junit.Test;
 
