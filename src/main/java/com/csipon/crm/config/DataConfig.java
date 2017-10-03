@@ -38,8 +38,8 @@ public class DataConfig {
 
     @Resource
     private Environment env;
-
-    @Bean(destroyMethod = "close")
+//    postgres://@ec2-54-247-74-197.eu-west-1.compute.amazonaws.com:5432/danokddt2ameu0
+    @Bean
     public DataSource dataSource() {
         log.debug("DataSource configuration - start.");
         HikariConfig config = new HikariConfig();
