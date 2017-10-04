@@ -19,22 +19,29 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by Pasha on 21.04.2017.
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final AuthenticationSuccessHandler successHandler;
+    private final UserDetailsService userDetailsService;
+    private final AccessDeniedHandler deniedHandler;
+    private final AuthenticationProvider authenticationProvider;
+    private final PersistentTokenRepository tokenRepository;
+
     @Autowired
-    private AuthenticationSuccessHandler successHandler;
-    @Autowired
-    private UserDetailsService userDetailsService;
-    @Autowired
-    private AccessDeniedHandler deniedHandler;
-    @Autowired
-    private AuthenticationProvider authenticationProvider;
-    @Autowired
-    private PersistentTokenRepository tokenRepository;
+    public SecurityConfig(AuthenticationSuccessHandler successHandler, UserDetailsService userDetailsService, AccessDeniedHandler deniedHandler, AuthenticationProvider authenticationProvider, PersistentTokenRepository tokenRepository) {
+        this.successHandler = successHandler;
+        this.userDetailsService = userDetailsService;
+        this.deniedHandler = deniedHandler;
+        this.authenticationProvider = authenticationProvider;
+        this.tokenRepository = tokenRepository;
+    }
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
