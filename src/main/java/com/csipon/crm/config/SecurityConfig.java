@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.sessionManagement().maximumSessions(1).sessionRegistry(sessionRegistry());
         http.authorizeRequests()
-                .antMatchers("/forgot").permitAll()
+                .antMatchers("/forgot", "**/generate/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
