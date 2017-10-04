@@ -21,8 +21,12 @@ import java.util.Collection;
 @Component(value = "successHandler")
 public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
 
+    private final RedirectStrategy redirectStrategy;
+
     @Autowired
-    private RedirectStrategy redirectStrategy;
+    public AuthenticationSuccessHandlerImpl(RedirectStrategy redirectStrategy) {
+        this.redirectStrategy = redirectStrategy;
+    }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
