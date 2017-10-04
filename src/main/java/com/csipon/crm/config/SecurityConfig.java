@@ -28,15 +28,15 @@ import javax.annotation.PostConstruct;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final AuthenticationSuccessHandler successHandler;
+    @Autowired
+    private AuthenticationSuccessHandler successHandler;
     private final UserDetailsService userDetailsService;
     private final AccessDeniedHandler deniedHandler;
     private final AuthenticationProvider authenticationProvider;
     private final PersistentTokenRepository tokenRepository;
 
     @Autowired
-    public SecurityConfig(AuthenticationSuccessHandler successHandler, UserDetailsService userDetailsService, AccessDeniedHandler deniedHandler, AuthenticationProvider authenticationProvider, PersistentTokenRepository tokenRepository) {
-        this.successHandler = successHandler;
+    public SecurityConfig(UserDetailsService userDetailsService, AccessDeniedHandler deniedHandler, AuthenticationProvider authenticationProvider, PersistentTokenRepository tokenRepository) {
         this.userDetailsService = userDetailsService;
         this.deniedHandler = deniedHandler;
         this.authenticationProvider = authenticationProvider;
@@ -76,6 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
+    @PostConstruct
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
