@@ -28,8 +28,9 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
     private final UserAttemptsDao userAttemptsDao;
 
     @Autowired
-    public LimitLoginAuthenticationProvider(UserAttemptsDao userAttemptsDao, UserDetailsService userDetailsService) {
+    public LimitLoginAuthenticationProvider(UserAttemptsDao userAttemptsDao, UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
         super.setUserDetailsService(userDetailsService);
+        super.setPasswordEncoder(passwordEncoder);
         this.userAttemptsDao = userAttemptsDao;
     }
 
@@ -37,12 +38,6 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
     public void setUserDetailsService(UserDetailsService userDetailsService) {
         super.setUserDetailsService(userDetailsService);
     }
-
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        super.setPasswordEncoder(passwordEncoder);
-    }
-
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UserAttempts userAttempts = userAttemptsDao.getUserAttempts(authentication.getName());
