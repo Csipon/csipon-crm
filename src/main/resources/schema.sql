@@ -161,7 +161,7 @@ ALTER TABLE product
 -- ALTER TABLE product
 --     ADD CONSTRAINT product__UN UNIQUE ( discount_id ) ;
 
-CREATE TABLE product_param 
+CREATE TABLE \
     ( 
      id BIGSERIAL  NOT NULL , 
      param_name VARCHAR (50)  NOT NULL , 

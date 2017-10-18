@@ -3,13 +3,17 @@ package com.csipon.crm.domain.real;
 import com.csipon.crm.domain.model.Group;
 import com.csipon.crm.domain.model.Discount;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "groups")
 public class RealGroup implements Group {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String name;
+    @JoinColumn(name = "discount_id", table = "discount", referencedColumnName = "id")
     private Discount discount;
 
     public RealGroup() {

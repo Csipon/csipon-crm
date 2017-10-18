@@ -3,16 +3,21 @@ package com.csipon.crm.domain.real;
 
 import com.csipon.crm.domain.model.Product;
 import com.csipon.crm.domain.model.ProductParam;
+
+import javax.persistence.*;
 import java.util.Objects;
 
-/**
- *
- * @author YARUS
- */
+@Entity
+@Table(name = "product_param")
 public class RealProductParam implements ProductParam{
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column(name = "param_name")
     private String paramName;
-    private String value;    
+    @Column
+    private String value;
+    @JoinColumn(name = "product_id", table = "product", referencedColumnName = "id")
     private Product product;
 
     public RealProductParam() {

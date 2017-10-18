@@ -4,24 +4,40 @@ import com.csipon.crm.domain.model.Address;
 import com.csipon.crm.domain.model.User;
 import com.csipon.crm.domain.model.Organization;
 import com.csipon.crm.domain.model.UserRole;
+import com.sun.javafx.beans.IDProperty;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class RealUser implements User {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String password;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "middle_name")
     private String middleName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column
     private String phone;
+    @Column
     private String email;
+    @Column
     private boolean enable;
+    @Column(name = "account_non_locked")
     private boolean accountNonLocked;
+    @JoinColumn(name = "address_id", table = "address", referencedColumnName = "id")
     private Address address;
+    @Column(name = "contact_person")
     private boolean contactPerson;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_role")
     private UserRole userRole;
+    @JoinColumn(name = "organization_id", table = "organization", referencedColumnName = "id")
     private Organization organization;
 
 

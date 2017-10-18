@@ -2,12 +2,15 @@ package com.csipon.crm.domain.real;
 
 import com.csipon.crm.domain.model.Organization;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "organization")
 public class RealOrganization implements Organization {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String name;
 
     public RealOrganization() {

@@ -1,22 +1,29 @@
 package com.csipon.crm.domain.real;
 
 
-import com.csipon.crm.domain.model.Group;
-import com.csipon.crm.domain.model.ProductStatus;
-import com.csipon.crm.domain.model.Discount;
-import com.csipon.crm.domain.model.Product;
+import com.csipon.crm.domain.converter.ProductStatusConverter;
+import com.csipon.crm.domain.model.*;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "product")
 public class RealProduct implements Product {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String title;
+    @Column(name = "default_price")
     private Double defaultPrice;
+    @Convert(converter = ProductStatusConverter.class)
+    @Column(name = "status_id")
     private ProductStatus status;
+    @Column
     private String description;
+    @JoinColumn(name = "discount_id", table = "discount", referencedColumnName = "id")
     private Discount discount;
+    @JoinColumn(name = "group_id", table = "groups", referencedColumnName = "id")
     private Group group;
 
     public RealProduct() {

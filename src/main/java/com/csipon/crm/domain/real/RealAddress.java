@@ -3,16 +3,27 @@ package com.csipon.crm.domain.real;
 import com.csipon.crm.domain.model.Address;
 import com.csipon.crm.domain.model.Region;
 
+import javax.persistence.*;
+
 /**
  * @author Karpunets
  * @since 21.05.2017
  */
+@Entity
+@Table(name = "address")
 public class RealAddress implements Address {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private Double latitude;
+    @Column
     private Double longitude;
+    @Column
     private String details;
+    @JoinColumn(name = "region_id" , table = "region", referencedColumnName = "id")
     private Region region;
+    @Column(name = "formatted_address")
     private String formattedAddress;
 
     public RealAddress() {

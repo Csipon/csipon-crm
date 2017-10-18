@@ -16,6 +16,7 @@ import com.csipon.crm.domain.request.UserRowRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -34,6 +35,7 @@ import java.util.List;
  * Created by bpogo on 4/22/2017.
  */
 @Repository
+@Profile("OLD")
 public class UserDaoImpl implements UserDao {
     private static final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
 
@@ -175,31 +177,6 @@ public class UserDaoImpl implements UserDao {
         return null;
     }
 
-
-    private Long getAddressId(Address address) {
-        if (address == null)
-            return null;
-        Long addressId = address.getId();
-        if (addressId != null) {
-            return addressId;
-        }
-        addressId = addressDao.create(address);
-
-        return addressId;
-    }
-
-    private Long getOrgId(Organization org) {
-        Long orgId = null;
-        if (org != null) {
-            orgId = org.getId();
-            if (orgId != null) {
-                return orgId;
-            }
-            orgId = organizationDao.create(org);
-        }
-        return orgId;
-    }
-
     @Override
     public long updatePassword(User user, String password) {
         SqlParameterSource params = new MapSqlParameterSource()
@@ -331,5 +308,15 @@ public class UserDaoImpl implements UserDao {
             }
             return users;
         }
+    }
+
+    @Override
+    public OrganizationDao getOrganizationDao() {
+        return organizationDao;
+    }
+
+    @Override
+    public AddressDao getAddressDao() {
+        return addressDao;
     }
 }

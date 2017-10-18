@@ -2,15 +2,21 @@ package com.csipon.crm.domain.real;
 
 import com.csipon.crm.domain.model.Discount;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "discount")
 public class RealDiscount implements Discount {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String title;
+    @Column
     private Double percentage;
+    @Column
     private String description;
+    @Column
     private Boolean active;
 
     public RealDiscount() {

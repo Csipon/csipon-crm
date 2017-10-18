@@ -1,20 +1,29 @@
 package com.csipon.crm.domain.real;
 
 import com.csipon.crm.domain.model.*;
+import com.sun.javafx.beans.IDProperty;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+@Entity
+@Table(name = "history")
 public class RealHistory implements History {
+    @Id
+    @GeneratedValue
     private Long id;
+    @JoinColumn
     private Status newStatus;
+    @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dateChangeStatus;
+    @Column
     private String descChangeStatus;
+    @JoinColumn(name = "order_id", table = "orders", referencedColumnName = "id")
     private Order order;
+    @JoinColumn(name = "complaint_id", table = "complaint", referencedColumnName = "id")
     private Complaint complaint;
+    @JoinColumn(name = "product_id", table = "product", referencedColumnName = "id")
     private Product product;
 
     public RealHistory() {

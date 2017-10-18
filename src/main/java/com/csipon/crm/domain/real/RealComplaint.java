@@ -1,24 +1,36 @@
 package com.csipon.crm.domain.real;
 
+import com.csipon.crm.domain.converter.ComplaintStatusConverter;
 import com.csipon.crm.domain.model.Complaint;
 import com.csipon.crm.domain.model.ComplaintStatus;
 import com.csipon.crm.domain.model.Order;
 import com.csipon.crm.domain.model.User;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * @author Karpunets
- * @since 21.05.2017
- */
+
+@Entity
+@Table(name = "complaint")
 public class RealComplaint implements Complaint {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String title;
+    @Column
     private String message;
+    @Convert(converter = ComplaintStatusConverter.class)
+    @Column(name = "status_id")
     private ComplaintStatus status;
+    @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime date;
+    @JoinColumn(name = "customer_id", table = "users", referencedColumnName = "id")
     private User customer;
+    @JoinColumn(name = "pmg_id", table = "users", referencedColumnName = "id")
     private User pmg;
+    @JoinColumn(name = "order_id", table = "orders", referencedColumnName = "id")
     private Order order;
 
     public RealComplaint() {
